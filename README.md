@@ -6,11 +6,11 @@ This project is an example within _The Ultimate PaperTrail Guide_. See the READM
 
 To run the demo app, first clone it:
 
-    git clone https://github.com/seancdavis/ultimate_paper_trail_guide.git
+    git clone https://github.com/changebase-io/paper-trail-version-history-example.git
 
-Change into this project directory and install dependencies:
+Change into the project directory and install dependencies:
 
-    cd ultimate_paper_trail_guide/edited-state
+    cd paper-trail-version-history-example
     bundle install
 
 Seed the database:
