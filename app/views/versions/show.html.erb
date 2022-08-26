@@ -1,16 +1,26 @@
 <div class="flex">
   <div class="min-h-screen border-r border-stone-200">
+    <div class="p-3 border-b border-stone-300">
+      <%= link_to(@post, class: 'no-underline flex items-center space-x-2 text-sm') do %>
+        <span class="inline-block h-3"><%= render 'shared/icons/arrow_left' %></span>
+        <span>Back to Post</span>
+      <% end %>
+    </div>
     <%= render partial: 'versions/version', collection: @versions %>
   </div>
-  <div class="p-4">
+  <div class="flex-grow">
     <div class="max-w-4xl px-8 py-16 mx-auto">
       <%= image_tag @post.image_url, class: 'object-center object-cover h-[20rem] w-full mb-4 block' %>
       <%# Meta %>
       <div class="flex items-center justify-between mb-2 text-sm text-stone-500">
         <span><%= @post.published_at.strftime('%b %d, %Y') %></span>
         <div class="flex items-center">
-          <%= link_to post_version_path(@post, @version), class: secondary_button_classes, method: :put do %>
-            <span class="inline-block h-3">Restore this Version</span>
+          <% if @version == @post.versions.first %>
+            <span class="block p-2 text-xs border rounded-md border-stone-300">Current Version</span>
+          <% else %>
+            <%= link_to post_version_path(@post, @version), class: 'text-white block p-2 text-xs border border-pink-500 rounded-md bg-pink-500 hover:bg-pink-600 transition-colors duration-300', method: :put do %>
+              <span class="inline-block h-3">Restore this Version</span>
+            <% end %>
           <% end %>
         </div>
       </div>

@@ -29,7 +29,7 @@ class VersionsController < ApplicationController
   end
 
   def set_versions
-    @versions = @post.versions.includes(:user)
+    @versions = @post.versions.includes(:originator).reject { |v| v.object.nil? }
     not_found if @versions.empty?
   end
 

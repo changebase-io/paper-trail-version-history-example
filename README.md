@@ -41,3 +41,11 @@ These projects use [TailwindCSS](https://tailwindcss.com/) to make styling pages
 [Simple Form](https://github.com/heartcombo/simple_form) is being used to help in quickly spinning up new forms.
 
 _Most_ of the styles for forms are set in the initializer — `config/initializers/simple_form.rb`. When making changes to this file, you need to restart your Rails server to see the changes take effect.
+
+## Known Issues
+
+Viewing versions for a post has a few N+1 query problems:
+
+- Each version in the list makes multiple queries.
+
+These issues will be fixed in a future update.

@@ -5,7 +5,7 @@ def create_object(klass, attributes, _attempt = 1)
   obj.save!
   obj
 rescue StandardError => e
-  puts "[User ERROR] #{e.post}"
+  puts "[User ERROR] #{e.message}"
   puts obj.attributes
 end
 
