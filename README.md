@@ -2,7 +2,7 @@
 
 This project is an example within _The Ultimate PaperTrail Guide_. It demonstrates viewing changes to an object over time with the ability to restore a previous version.
 
-![PaperTrail Version History Example Screenshot](./docs/blog-show-screenshot.png)
+![PaperTrail Version History Example Screenshot](./docs/blog-version-history-screenshot.png)
 
 ## Setup
 
