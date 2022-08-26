@@ -1,0 +1,18 @@
+<div class="max-w-xl px-4 pt-20 mx-auto md:px-0">
+  <h1>Sign In</h1>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email", class: 'mb-4 border border-stone-200' } %>
+      <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password", class: 'mb-4 border border-stone-200' } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Log in" %>
+    </div>
+  <% end %>
+</div>

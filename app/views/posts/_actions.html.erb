@@ -1,0 +1,9 @@
+<%= link_to edit_post_path(post), class: secondary_button_classes + ' mr-3' do %>
+  <span class="inline-block h-3"><%= render 'shared/icons/edit' %></span>
+<% end %>
+<%= link_to post_versions_path(post), class: secondary_button_classes + ' mr-3' do %>
+  <span class="inline-block h-3"><%= render 'shared/icons/history' %></span>
+<% end %>
+<%= link_to post, data: {confirm: 'Are you sure?'}, method: :delete, class: secondary_button_classes do %>
+  <span class="inline-block h-3"><%= render 'shared/icons/delete' %></span>
+<% end %>

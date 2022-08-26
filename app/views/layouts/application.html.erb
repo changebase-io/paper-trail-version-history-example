@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ultimate PaperTrail Guide</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon.png") %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body class="bg-stone-50">
+    <%# Alerts %>
+    <% if notice || alert %>
+      <div class="fixed left-0 z-50 w-full text-center text-white top-2" data-fade-out>
+        <% if notice %>
+          <p class="inline-block px-3 py-2 mb-0 bg-blue-500 rounded-md"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="inline-block px-3 py-2 mb-0 bg-red-500 rounded-md"><%= alert %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <%# Header %>
+    <div class="sticky top-0 z-50">
+      <div class="flex items-center justify-between w-full px-4 py-3 mx-auto bg-white border-b border-gray-200">
+        <a href="/" class="flex items-center justify-center w-10 h-10 no-underline bg-pink-500 rounded-full">
+          <span class="block font-bold leading-none text-white">PT</span>
+        </a>
+        <div class="flex items-center space-x-2">
+          <% if user_signed_in? %>
+            <div class="flex-shrink-0">
+              <%= image_tag "https://i.pravatar.cc/400?img=#{current_user.id}", class: "rounded-full h-8 w-8 border border-stone-300" %>
+            </div>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'text-sm no-underline hover:underline' %>
+          <% else %>
+            <%= link_to 'Sign In', new_user_session_path, class: 'text-sm no-underline hover:underline' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%# Main Content %>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('[data-fade-out]').fadeOut(1000);
+    }, 2500);
+  });
+</script>

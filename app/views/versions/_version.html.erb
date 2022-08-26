@@ -1,0 +1,18 @@
+<%= link_to post_version_path(@post, version.id), class: version_link_class(version) do %>
+  <div class="flex items-center mb-2 space-x-3 text-sm">
+    <span class="block font-semibold">
+      <%= version.created_at.strftime('%b %d, %Y') %>
+    </span>
+    <span class="text-stone-300">|</span>
+    <div class="flex items-center space-x-1">
+      <%= image_tag "https://i.pravatar.cc/400?img=#{version.user.id}", class: "rounded-full h-8 w-8 border border-stone-300" %>
+      <span class=""><%= version.user.name %></span>
+    </div>
+  </div>
+  <div class="flex items-center space-x-2">
+    <span class="inline-block p-1 text-xs uppercase border rounded-md border-stone-300 bg-stone-200 text-stone-500"><%= version.event %></span>
+    <% if version.event == 'update' %>
+      <span class="font-mono text-sm"><%= version.changeset.keys.excluding('updated_at').join(', ') %></span>
+    <% end %>
+  </div>
+<% end %>

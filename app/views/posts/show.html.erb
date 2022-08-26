@@ -1,0 +1,16 @@
+<div class="max-w-4xl px-8 py-16 mx-auto">
+  <div class="relative mb-4 pb-[40%] block">
+    <%= image_tag @post.image_url, class: 'absolute object-center object-fill h-full w-full' %>
+  </div>
+  <%# Meta %>
+  <div class="flex items-center justify-between mb-2 text-sm text-stone-500">
+    <span><%= @post.published_at.strftime('%b %d, %Y') %></span>
+    <div class="flex items-center">
+      <%= render partial: 'actions', locals: { post: @post } %>
+    </div>
+  </div>
+  <%# Title %>
+  <h1 class="mb-8 text-5xl font-semibold"><%= @post.title %></h1>
+  <%# Body %>
+  <div><%= markdown @post.body %></div>
+</div>

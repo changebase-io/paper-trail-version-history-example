@@ -1,0 +1,12 @@
+<div>
+  <%= link_to post, class: "relative mb-3 pb-[56.25%] block" do %>
+    <%= image_tag post.image_url, class: 'absolute object-center object-fill h-full w-full' %>
+  <% end %>
+  <h2 class="mb-1 text-xl font-semibold"><%= link_to post.title, post, class: 'text-inherit no-underline' %></h2>
+  <div class="flex items-center justify-between text-sm text-stone-500">
+    <span><%= post.published_at.strftime('%b %d, %Y') %></span>
+    <div class="flex items-center">
+      <%= render partial: 'actions', locals: { post: post } %>
+    </div>
+  </div>
+</div>

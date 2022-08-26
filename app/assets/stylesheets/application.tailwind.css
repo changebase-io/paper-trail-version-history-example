@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply mb-6 text-3xl font-light;
+  }
+
+  a {
+    @apply text-pink-600 underline;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  input,
+  [type='text'],
+  [type='date'],
+  [type='url'],
+  textarea,
+  select {
+    @apply border
+      border-stone-200
+      block
+      rounded-md
+      w-full;
+  }
+
+  input[type='submit'] {
+    @apply hover:cursor-pointer
+      inline-block
+      w-auto;
+  }
+
+  svg {
+    @apply h-full
+      w-full;
+  }
+
+  abbr {
+    @apply no-underline;
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-pink-500
+      font-bold
+      hover:bg-pink-600
+      hover:cursor-pointer
+      inline-block
+      leading-none
+      no-underline
+      px-6
+      py-3
+      rounded-md
+      text-white
+      text-xs
+      uppercase;
+  }
+}

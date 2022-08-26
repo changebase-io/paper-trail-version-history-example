@@ -1,0 +1,11 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body, input_html: { rows: 10 } %>
+  <%= f.input :user_id, collection: User.all %>
+  <%= f.input :image_url %>
+  <%= f.input :published_at, as: :date, html5: true %>
+  <div class="flex items-center space-x-3">
+    <%= f.submit 'Save Post', class: 'button' %>
+    <%= link_to 'Cancel', @post %>
+  </div>
+<% end %>
