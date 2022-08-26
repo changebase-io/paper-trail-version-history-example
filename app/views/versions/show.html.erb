@@ -15,12 +15,8 @@
       <div class="flex items-center justify-between mb-2 text-sm text-stone-500">
         <span><%= @post.published_at.strftime('%b %d, %Y') %></span>
         <div class="flex items-center">
-          <% if @version == @post.versions.first %>
-            <span class="block p-2 text-xs border rounded-md border-stone-300">Current Version</span>
-          <% else %>
-            <%= link_to post_version_path(@post, @version), class: 'text-white block p-2 text-xs border border-pink-500 rounded-md bg-pink-500 hover:bg-pink-600 transition-colors duration-300', method: :put do %>
-              <span class="inline-block h-3">Restore this Version</span>
-            <% end %>
+          <%= link_to post_version_path(@post, @version), class: 'text-white block p-2 text-xs border border-pink-500 rounded-md bg-pink-500 hover:bg-pink-600 transition-colors duration-300', method: :put do %>
+            <span class="inline-block h-3">Restore this Version</span>
           <% end %>
         </div>
       </div>
