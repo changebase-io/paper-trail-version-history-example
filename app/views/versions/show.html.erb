@@ -2,7 +2,22 @@
   <div class="min-h-screen border-r border-stone-200">
     <%= render partial: 'versions/version', collection: @versions %>
   </div>
-  <div>
-    Render post
+  <div class="p-4">
+    <div class="max-w-4xl px-8 py-16 mx-auto">
+      <%= image_tag @post.image_url, class: 'object-center object-cover h-[20rem] w-full mb-4 block' %>
+      <%# Meta %>
+      <div class="flex items-center justify-between mb-2 text-sm text-stone-500">
+        <span><%= @post.published_at.strftime('%b %d, %Y') %></span>
+        <div class="flex items-center">
+          <%= link_to post_version_path(@post, @version), class: secondary_button_classes, method: :put do %>
+            <span class="inline-block h-3">Restore this Version</span>
+          <% end %>
+        </div>
+      </div>
+      <%# Title %>
+      <h1 class="mb-8 text-5xl font-semibold"><%= @post.title %></h1>
+      <%# Body %>
+      <div><%= markdown @post.body %></div>
+    </div>
   </div>
 </div>

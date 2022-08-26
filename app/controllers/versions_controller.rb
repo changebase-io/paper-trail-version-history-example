@@ -10,9 +10,16 @@ class VersionsController < ApplicationController
     redirect_to post_version_path(@post, @versions.first.id) if @versions.first
   end
 
-  def show; end
+  def show
+    @post = @version.reify
+  end
 
-  def update; end
+  def update
+    @post = @version.reify
+    @post.save!
+    redirect_to post_version_path(@post, @post.versions.first.id),
+                notice: 'Post was restored successfully.'
+  end
 
   private
 

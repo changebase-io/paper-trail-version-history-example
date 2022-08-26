@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  has_paper_trail
+  has_paper_trail({ versions: { scope: -> { order(id: :desc) } } })
 
   belongs_to :user
 
