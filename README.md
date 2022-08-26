@@ -1,6 +1,8 @@
-# Edited State Example
+# Version History Example | The Ultimate PaperTrail Guide
 
-This project is an example within _The Ultimate PaperTrail Guide_. See the README in the main project directory for more information.
+This project is an example within _The Ultimate PaperTrail Guide_. It demonstrates viewing changes to an object over time with the ability to restore a previous version.
+
+![PaperTrail Version History Example Screenshot](./docs/blog-show-screenshot.png)
 
 ## Setup
 
