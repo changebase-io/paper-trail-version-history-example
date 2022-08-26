@@ -1,4 +1,4 @@
-<%= link_to post_version_path(@post, version.id), class: version_link_class(version) do %>
+<%= link_to post_version_path(@post, version.id), class: version_link_class(version), id: "version-#{version.id}" do %>
   <div class="flex items-center mb-2 space-x-3 text-sm">
     <span class="block font-semibold">
       <%= version.created_at.strftime('%b %d, %Y') %>
