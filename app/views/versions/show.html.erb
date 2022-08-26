@@ -31,9 +31,3 @@
     </div>
   </div>
 </div>
-<%# Scroll to active version %>
-<script type="text/javascript">
-  const lastMessage = document.getElementById("version-<%= @version.id %>");
-  const y = lastMessage.getBoundingClientRect().top - 65;
-  window.scrollTo({top: y, behavior: 'instant'});
-</script>
