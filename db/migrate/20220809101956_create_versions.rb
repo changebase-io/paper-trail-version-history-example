@@ -17,6 +17,7 @@ class CreateVersions < ActiveRecord::Migration[7.0]
       t.json     :object_changes, limit: TEXT_BYTES
       t.string   :originator_id
       t.boolean  :is_restorable
+      t.text     :fields_changed, array: true
 
       # Known issue in MySQL: fractional second precision
       # -------------------------------------------------

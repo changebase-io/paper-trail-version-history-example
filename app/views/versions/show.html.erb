@@ -3,7 +3,7 @@
     <div class="p-3 border-b border-stone-300">
       <%= link_to(@post, class: 'no-underline flex items-center space-x-2 text-sm') do %>
         <span class="inline-block h-3"><%= render 'shared/icons/arrow_left' %></span>
-        <span>Back to Post</span>
+        <span>Current Version</span>
       <% end %>
     </div>
     <%= render partial: 'versions/version', collection: @versions %>

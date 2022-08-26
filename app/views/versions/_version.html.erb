@@ -12,7 +12,7 @@
   <div class="flex items-center space-x-2">
     <span class="inline-block p-1 text-xs uppercase border rounded-md border-stone-300 bg-stone-200 text-stone-500"><%= version.event %></span>
     <% if version.event == 'update' %>
-      <span class="font-mono text-sm"><%= version.changeset.keys.excluding('updated_at').join(', ') %></span>
+      <span class="font-mono text-sm"><%= JSON.parse(version.fields_changed).join(', ') %></span>
     <% end %>
   </div>
 <% end %>

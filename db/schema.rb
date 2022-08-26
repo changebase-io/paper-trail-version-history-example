@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_101956) do
     t.json "object_changes"
     t.string "originator_id"
     t.boolean "is_restorable"
+    t.text "fields_changed"
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
